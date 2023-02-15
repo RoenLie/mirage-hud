@@ -12,21 +12,10 @@ jobs:
   publish-npm:
     runs-on: ubuntu-latest
     steps:
-      - name: Auto Increment Semver Action
-        uses: MCKanpolat/auto-semver-action@1.0.5
-        id: versioning
-        with:
-          releaseType: patch
-          incrementPerCommit: true
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Next Release Number
-        run: echo ${{ steps.versioning.outputs.version }}
-
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 19.3.0
           registry-url: https://registry.npmjs.org/
 
       - name: Setup pnpm
@@ -41,7 +30,7 @@ jobs:
         run: pnpm build
 
       - name: Change package version
-        run: node --loader tsm ./build/set-version.ts -v ${{ steps.versioning.outputs.version }}
+        run: pnpm increment-version
 
       - run: npm publish --access public
         env:

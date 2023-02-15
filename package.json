@@ -1,5 +1,5 @@
 {
-	"version": "0.1.1",
+	"version": "0.0.1",
 	"name": "@roenlie/mirage-hud",
 	"author": "Kristoffer Roen-Lie",
 	"license": "MIT",
@@ -13,7 +13,7 @@
 		"build": "vite build && tsc --project ./src/tsconfig.json",
 		"updatedeps": "pnpm update --latest --interactive",
 		"typecheck": "tsc --project ./tsconfig.json",
-		"setversion": "node --loader tsm ./build/set-version.ts -v 0.0.1"
+		"increment-version": "node --loader tsm ./build/increment-version.ts"
 	},
 	"dependencies": {
 		"@floating-ui/dom": "^1.2.1",

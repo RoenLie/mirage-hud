@@ -15,6 +15,5 @@ import { readFileSync, writeFileSync } from 'fs';
 	parsedPackage['version'] = version;
 
 	const stringified = JSON.stringify(parsedPackage, null, 3);
-
 	writeFileSync('./package.json', stringified);
 })();
