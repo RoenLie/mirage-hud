@@ -1,0 +1,15 @@
+{
+	"version": "0.0.1",
+	"name": "mirage-hud",
+	"author": "Kristoffer Roen-Lie",
+	"license": "MIT",
+	"description": "Heads up display for debugging and information display during development.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"lit": "^2.6.1",
+		"vite": "^4.1.1"
+	}
+}
