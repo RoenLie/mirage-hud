@@ -1,6 +1,6 @@
 {
 	"version": "0.0.1",
-	"name": "mirage-hud",
+	"name": "@roenlie/mirage-hud",
 	"author": "Kristoffer Roen-Lie",
 	"license": "MIT",
 	"description": "Heads up display for debugging and information display during development.",
