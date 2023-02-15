@@ -16,7 +16,7 @@ jobs:
         uses: MCKanpolat/auto-semver-action@1.0.5
         id: versioning
         with:
-          releaseType: minor
+          releaseType: patch
           incrementPerCommit: false
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -33,6 +33,9 @@ jobs:
         uses: pnpm/action-setup@v2.2.4
         with:
           version: 7.20.0
+
+      - name: Change package version
+        run: node --loader tsm ./build/set-version.ts -v ${{ steps.versioning.outputs.version }}
 
       - name: Install workspace dependencies.
         run: pnpm install
