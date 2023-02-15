@@ -17,7 +17,7 @@ jobs:
         id: versioning
         with:
           releaseType: patch
-          incrementPerCommit: false
+          incrementPerCommit: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Next Release Number
@@ -34,14 +34,14 @@ jobs:
         with:
           version: 7.20.0
 
-      - name: Change package version
-        run: node --loader tsm ./build/set-version.ts -v ${{ steps.versioning.outputs.version }}
-
       - name: Install workspace dependencies.
         run: pnpm install
 
       - name: Build complete project.
         run: pnpm build
+
+      - name: Change package version
+        run: node --loader tsm ./build/set-version.ts -v ${{ steps.versioning.outputs.version }}
 
       - run: npm publish --access public
         env:
