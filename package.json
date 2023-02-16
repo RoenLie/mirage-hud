@@ -9,6 +9,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
+		"dev:codespaces": "vite dev --host",
 		"preview": "vite preview",
 		"build": "vite build && tsc --project ./src/tsconfig.json",
 		"updatedeps": "pnpm update --latest --interactive",
@@ -19,6 +20,7 @@
 		"@floating-ui/dom": "^1.2.1",
 		"lit": "^2.6.1",
 		"nanoid": "^4.0.1",
+		"pnpm": "^7.27.0",
 		"tslib": "^2.4.1"
 	},
 	"devDependencies": {
